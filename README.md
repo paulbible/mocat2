@@ -3,7 +3,7 @@ MOCAT2 (metagenomic analysis toolkit) is a package for analyzing metagenomics da
 
 Development of MOCAT2 continues post the publication of the MOCAT2 Bioinformatics paper (http://bit.ly/1VbJnzi). This Github repo contains a cutting-edge MOCAT2 version. However, it is unsupported and comes as-is. Thus, only features available in the last tested and stable MOCAT2 release will recieve extensive support (http://mocat.embl.de/download.html).
 
-What's new in the developmental version that is not avilable in the public, stable version?
+<b>What's new in the developmental version that is not avilable in the public, stable version?</b>
 - Support for BWA as mapping software (instead of SOAP2 aligner)
 - Support for SLURM queuing system
 - Bug fixes
