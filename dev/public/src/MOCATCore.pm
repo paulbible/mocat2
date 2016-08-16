@@ -354,7 +354,7 @@ EOF
     {
       $SGEEXTRAPARAMS = "";
     }
-    print OUT "qsub $SGEEXTRAPARAMS -W block=true -V $cwd/MOCATJobArrayPBS.$job.$date.sh\n";
+    print OUT "qsub $SGEEXTRAPARAMS -V $cwd/MOCATJobArrayPBS.$job.$date.sh\n";
   } elsif ( $qsub eq "LSF" )
   {
     my $JOB = substr( "$ID", 0, 15 );
@@ -671,7 +671,7 @@ EOF
         system "sed -i 's/\$PBS_ARRAY_INDEX/1/' $cwd/MOCATJobArrayPBS.$job.$date.sh";
       }
     }
-    my $cmd = "qsub $SGEEXTRAPARAMS -W block=true -V $cwd/MOCATJobArrayPBS.$job.$date.sh | tee -a $cwd/logs/$job/commands/MOCATJob_$job.$date.command.log";
+    my $cmd = "qsub $SGEEXTRAPARAMS -V $cwd/MOCATJobArrayPBS.$job.$date.sh | tee -a $cwd/logs/$job/commands/MOCATJob_$job.$date.command.log";
     if ( $run_on_host ne "" )
     {
       $cmd = "ssh $run_on_host \"cd $cwd && $cmd \"";

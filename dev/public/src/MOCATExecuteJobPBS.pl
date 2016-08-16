@@ -13,10 +13,11 @@ while (<>){
     chomp $command;
     open (OUT,">RJSS");
     print OUT     "#\!/bin/sh \n";    
-    print OUT     "#PBS -cwd \n";
-    print OUT     "#\$ -o $i.log \n";
-    print OUT     "#\$ -e $i.error \n";
-    print OUT     "#\$ -N MOCATJob_$i \n";
+#    print OUT     "#PBS -cwd \n";
+    print OUT     "#PBS -o $i.log \n";
+    print OUT     "#PBS -e $i.error \n";
+    print OUT     "#PBS -N MOCATJob_$i \n";
+    print OUT     "cd \$PBS_O_WORKDIR";
     print OUT     "$command \n";
     close OUT;
     $i++;
