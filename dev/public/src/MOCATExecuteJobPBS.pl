@@ -17,7 +17,7 @@ while (<>){
     print OUT     "#PBS -o $i.log \n";
     print OUT     "#PBS -e $i.error \n";
     print OUT     "#PBS -N MOCATJob_$i \n";
-    print OUT     "cd \$PBS_O_WORKDIR";
+    print OUT     "cd \$PBS_O_WORKDIR\n";
     print OUT     "$command \n";
     close OUT;
     $i++;
